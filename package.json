@@ -1,0 +1,27 @@
+{
+  "name": "BYRDsurvey",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.6",
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "bootstrap": "^4.4.1",
+    "datatables.net-bs": "^1.10.20",
+    "jquery": "^1.11.2",
+    "meteor-node-stubs": "^1.0.0",
+    "popper.js": "^1.16.0",
+    "seededshuffle": "^0.2.0"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}

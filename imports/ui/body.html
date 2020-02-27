@@ -1,0 +1,68 @@
+<body>
+	<div class="container">
+
+    {{#if startScreen}}
+        <header>
+            <h2 class="text-center">
+                Digital PIE Survey
+            </h2>
+        </header>
+        <div class="row">
+            <div class="col-md">
+                <h3>Instructions</h3>
+                <p>
+                    You will be given the PIE separated and the Germanic Separated forms of a word. 
+                    If it is correct, select correct and move on to the next.
+                    If it is incorrect please select which section of both forms of the word is incorrect with your mouse. 
+                    This will leave it highlighted. 
+                    Also provide a brief description of in your own words as to why it is incorrect and what changes would be made to fix it. 
+                    Use complete sentences.
+                    
+                    Make sure that what you have written is correct and hit next. You cannot go back to previous entries to correct them.
+                    <br/>
+                </p>
+                <h3> Purpose</h3>
+                <p>
+                    The purpose of this project is to
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm text-center">
+                <div class="btn btn-success start-button"> Continue </div>
+            </div>
+        </div>
+    {{else}}
+    {{#if endScreen}}
+
+        <header>
+            <h2 class="text-center">
+                Thank you!
+            </h2>
+        </header>
+    {{else}}
+        <header>
+            <h2 class="text-center">
+                Explainability Task
+            </h2>
+        </header>
+		<form class="translation">
+			<div class="container">
+				{{#each tasks}}
+					{{> task}}
+				{{/each}}
+                <br>
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="btn btn-primary next-button">next</div>
+                    </div>
+
+                </div>
+			</div>
+<!--			<input class="btn btn-primary" type="submit">-->
+		</form>
+    {{/if}}
+    {{/if}}
+	</div>
+</body>
+ 

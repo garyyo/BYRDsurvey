@@ -1,0 +1,268 @@
+[
+  {
+    "PIE": "p-é-n-kʷ-e",
+    "wrong": "b-i-n-hʷ-e",
+    "right": "f-i-n-hʷ-e",
+    "reason-specific": "p becomes f at the beginning of the word",
+    "reason-broad": "voiceless stops become voiceless fricatives at the beginning of the word"
+  },
+  {
+    "PIE": "t-n̥-h₂-a-r-ó",
+    "wrong": "t-un-a-r-a",
+    "right": "th-un-a-r-a",
+    "reason-specific": "t becomes th at the beginning of the word",
+    "reason-broad": "voiceless stops become voiceless fricatives at the beginning of the word"
+  },
+  {
+    "PIE": "ḱ-o-n-k",
+    "wrong": "g-a-n-g",
+    "right": "h-a-n-h",
+    "reason-specific": "k becomes h at the beginning of the word",
+    "reason-broad": "voiceless stops become voiceless fricatives at the beginning of the word"
+  },
+  {
+    "PIE": "kʷ-ó-d",
+    "wrong": "gʷ-a-t",
+    "right": "hʷ-a-t",
+    "reason-specific": "kʷ becomes hʷ at the beginning of the word",
+    "reason-broad": "voiceless stops become voiceless fricatives at the beginning of the word"
+  },
+  {
+    "PIE": "s-p-e-ḱ",
+    "wrong": "s-f-e-h",
+    "right": "s-p-e-h",
+    "reason-specific": "p doesn't change after an s",
+    "reason-broad": "voiceless stops do not change after voiceless fricatives"
+  },
+  {
+    "PIE": "s-t-ǝ-h₂-t-í",
+    "wrong": "s-th-a-d-i",
+    "right": "s-t-a-d-i",
+    "reason-specific": "t doesn't change after an s",
+    "reason-broad": "voiceless stops do not change after voiceless fricatives"
+  },
+  {
+    "PIE": "s-k-o-t-ó",
+    "wrong": "s-h-a-d-a",
+    "right": "s-k-a-d-a",
+    "reason-specific": "k doesn't change after an h",
+    "reason-broad": "voiceless stops do not change after voiceless fricatives"
+  },
+  {
+    "PIE": "k-ǝ-h₂-p-y-é",
+    "wrong": "h-a-f-y-e",
+    "right": "h-a-b-y-e",
+    "reason-specific": "p becomes b when it occurs before a stressed vowel in the middle of a word",
+    "reason-broad": "voiceless stops becomes voiced when it occurs before a stressed vowel in the middle of a word"
+  },
+  {
+    "PIE": "s-t-ǝ-h₂-t-í",
+    "wrong": "s-t-a-th-i",
+    "right": "s-t-a-d-i",
+    "reason-specific": "t becomes d when it occurs before a stressed vowel in the middle of a word",
+    "reason-broad": "voiceless stops becomes voiced when it occurs before a stressed vowel in the middle of a word"
+  },
+  {
+    "PIE": "s-w-e-ḱ-r-ú-h₂",
+    "wrong": "s-w-e-h-r-ū",
+    "right": "s-w-e-g-r-ū",
+    "reason-specific": "ḱ becomes g when it occurs before a stressed vowel in the middle of a word",
+    "reason-broad": "voiceless stops becomes voiced when it occurs before a stressed vowel in the middle of a word"
+  },
+  {
+    "PIE": "s-e-kʷ-o-n-ó",
+    "wrong": "s-e-hʷ-a-n-a",
+    "right": "s-e-w-a-n-a",
+    "reason-specific": "kʷ becomes w when it occurs before a stressed vowel in the middle of a word",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "dʰ-éw-b-u",
+    "wrong": "d-ew-f-u",
+    "right": "d-ew-p-u",
+    "reason-specific": "b becomes p (everywhere)",
+    "reason-broad": "voiced stops become voiceless stops"
+  },
+  {
+    "PIE": "p-ṓ-d",
+    "wrong": "f-ō-d",
+    "right": "p-ō-d",
+    "reason-specific": "d becomes t (everywhere)",
+    "reason-broad": "voiced stops become voiceless stops"
+  },
+  {
+    "PIE": "h₂-á-ǵ-r-o",
+    "wrong": "a-w-r-a",
+    "right": "a-k-r-a",
+    "reason-specific": "ǵ becomes k (everywhere)",
+    "reason-broad": "voiced stops become voiceless stops"
+  },
+  {
+    "PIE": "gʷ-ow",
+    "wrong": "w-aw",
+    "right": "kʷ-aw",
+    "reason-specific": "gʷ becomes kʷ (everywhere)",
+    "reason-broad": "voiced stops become voiceless stops"
+  },
+  {
+    "PIE": "bʰ-r-á-h₂-t-e-r",
+    "wrong": "p-r-ō-th-e-r",
+    "right": "b-r-ō-th-e-r",
+    "reason-specific": "bʰ becomes b",
+    "reason-broad": "voiced aspirates become voiced stops"
+  },
+  {
+    "PIE": "dʰ-éw-b-u",
+    "wrong": "t-ew-p-u",
+    "right": "d-ew-p-u",
+    "reason-specific": "dʰ becomes d",
+    "reason-broad": "voiced aspirates become voiced stops"
+  },
+  {
+    "PIE": "gʰ-áy-d-o",
+    "wrong": "k-ay-t-a",
+    "right": "g-ay-t-a",
+    "reason-specific": "gʰ becomes g",
+    "reason-broad": "voiced aspirates become voiced stops"
+  },
+  {
+    "PIE": "gʷʰ-o-n-o",
+    "wrong": "gʷ-a-n-a",
+    "right": "b-a-n-a",
+    "reason-specific": "gʷʰ becomes b at the beginning of the word",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "n-e-gʷʰ-r-ó",
+    "wrong": "n-e-gʷ-r-a",
+    "right": "n-e-w-r-a",
+    "reason-specific": "gʷʰ becomes w in the middle of the word",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "s-o-n-gʷʰ-o-",
+    "wrong": "s-a-n-w-a",
+    "right": "s-a-n-gʷ-a",
+    "reason-specific": "gʷʰ becomes gʷ after an n",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "h₁-ḗ-t-s-t-o",
+    "wrong": "ē-th-s-t-a",
+    "right": "ē-s-a",
+    "reason-specific": "tst simplifies to s",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "h₁-ḗ-t-s-t-o",
+    "wrong": "h-ē-s-a",
+    "right": "ē-s-a",
+    "reason-specific": "h₁ is deleted at the beginning of the word",
+    "reason-broad": "h\" sounds lost at the beginning of the word"
+  },
+  {
+    "PIE": "h₂-á-ǵ-r-o",
+    "wrong": "h-a-w-r-a",
+    "right": "a-k-r-a",
+    "reason-specific": "h₂ is deleted at the beginning of the word",
+    "reason-broad": "h\" sounds lost at the beginning of the word"
+  },
+  {
+    "PIE": "h₃-ó-z-d-o",
+    "wrong": "g-a-s-t-a",
+    "right": "a-s-t-a",
+    "reason-specific": "h₃ is deleted at the beginning of the word",
+    "reason-broad": "h\" sounds lost at the beginning of the word"
+  },
+  {
+    "PIE": "gʷʰ-r-e-h₁",
+    "wrong": "b-r-e",
+    "right": "b-r-ē",
+    "reason-specific": "h₁ is deleted after a vowel and then lengthens it",
+    "reason-broad": "h\" sounds lost after a vowel and then lengthen it"
+  },
+  {
+    "PIE": "h₃-bʰ-r-ú-h₂",
+    "wrong": "b-r-u-h",
+    "right": "b-r-ū",
+    "reason-specific": "h₂ is deleted after a vowel and then lengthens it",
+    "reason-broad": "h\" sounds lost after a vowel and then lengthen it"
+  },
+  {
+    "PIE": "h₁-n-ó-h₃-m-n̥",
+    "wrong": "n-o-m-un",
+    "right": "n-ō-m-un",
+    "reason-specific": "h₃ is deleted after a vowel and then lengthens it",
+    "reason-broad": "h\" sounds lost after a vowel and then lengthen it"
+  },
+  {
+    "PIE": "gʷ-i-h₃-w-ó",
+    "wrong": "kʷ-ī-w-a",
+    "right": "kʷ-i-kʷ-a",
+    "reason-specific": "h₃w becomes kʷ",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "gʷ-r̥-h₂-ú",
+    "wrong": "k-er-u",
+    "right": "k-ur-u",
+    "reason-specific": "r̥ becomes ur",
+    "reason-broad": "syllabic resonants become u plus resonant"
+  },
+  {
+    "PIE": "p-l̥-h₁-n-ó",
+    "wrong": "f-al-l-a-",
+    "right": "f-ul-l-a-",
+    "reason-specific": "l̥ becomes ul",
+    "reason-broad": "syllabic resonants become u plus resonant"
+  },
+  {
+    "PIE": "gʷ-m̥-t-í",
+    "wrong": "k-mu-th-i",
+    "right": "k-um-th-i",
+    "reason-specific": "m̥ becomes um everywhere but at the end of the word",
+    "reason-broad": "syllabic resonants become u plus resonant"
+  },
+  {
+    "PIE": "s-e-p-t-ḿ̥",
+    "wrong": "s-e-b-d-um",
+    "right": "s-e-b-d-un",
+    "reason-specific": "m̥ becomes un at the end of the word",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "h₁-n-ó-h₃-m-n̥",
+    "wrong": "n-ō-m-in",
+    "right": "n-ō-m-un",
+    "reason-specific": "n̥ becomes un",
+    "reason-broad": "syllabic resonants become u plus resonant"
+  },
+  {
+    "PIE": "p-é-n-kʷ-e",
+    "wrong": "f-u-n-hʷ-e",
+    "right": "f-i-n-hʷ-e",
+    "reason-specific": "e becomes i before n and m",
+    "reason-broad": "e becomes i before nasals"
+  },
+  {
+    "PIE": "kʷ-ó-d",
+    "wrong": "hʷ-u-t",
+    "right": "hʷ-a-t",
+    "reason-specific": "o becomes a",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "h₂-ow-i",
+    "wrong": "ew-i",
+    "right": "aw-i",
+    "reason-specific": "ow becomes aw",
+    "reason-broad": ""
+  },
+  {
+    "PIE": "s-n-óy-gʷʰ-o",
+    "wrong": "s-n-ey-w-a",
+    "right": "s-n-ay-w-a",
+    "reason-specific": "oy becomes ay",
+    "reason-broad": ""
+  }
+]

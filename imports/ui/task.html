@@ -1,0 +1,32 @@
+<template name="task">
+    <div class="container answer" id="{{_id._str}}">
+        <div class="row">
+            <div class="col-sm h4 text-center">PIE Separated</div>
+            <div class="col-sm h4 text-center">Germanic Separated</div>
+        </div>
+        <div class="row">
+            <div class="col-sm text-center selectable">{{PIE}}<input type="hidden" class="PIE-hidden-selected"/></div>
+            <div class="col-sm-auto text-center selectable"><i class="fa fa-arrow-right"></i></div>
+            <div class="col-sm text-center selectable">{{wrong}}<input type="hidden" class="Germ-hidden-selected"/></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm text-center btn-group answer-correct" data-toggle="button">
+                <div class="btn btn-success">Correct</div>
+                <div class="btn btn-danger">Incorrect</div>
+            </div>
+            <input type="hidden" class="change-correct">
+        </div>
+        <br>
+        <div class="row reasoning">
+            <div class="col-sm text-center">
+                <h5>Select the incorrect portion of both words with your mouse</h5>
+            </div>
+        </div>
+        <div class="row reasoning">
+            <div class="col-sm text-center">
+                <input type="text" class="reasoning-form form-control text-center" placeholder="Type your reasoning here">
+            </div>
+        </div>
+    </div>
+</template>

@@ -10,6 +10,7 @@ import './body.html';
 
 let startScreen = new ReactiveVar(true)
 let endScreen = new ReactiveVar(false)
+let submitted = new ReactiveVar(false)
 
 export const updateView = function(){
 	$(".answer").hide()
@@ -38,6 +39,9 @@ Template.body.helpers({
 	},
 	endScreen() {
 		return endScreen.get()
+	},
+	submitted() {
+		return submitted.get()
 	}
 });
 
@@ -54,6 +58,7 @@ Template.task.onRendered(function (){
 
 Template.body.events({
 	'submit .translation'(event) {
+		console.log("its fine, im here")
 		let translation_keys = Translations.find({}).fetch().map(function(currentValue){return currentValue._id._str})
 		console.log(translation_keys)
 		// Prevent default browser form submit
@@ -86,11 +91,8 @@ Template.body.events({
 		// Tasks.insert(answers);
 	},
 	'click .next-button'(event) {
-		console.log("ya clicked it")
-		let stepNum = Session.get("taskStep")
-		let maxStep = Session.get("maxStep")
-		Session.set("taskStep", stepNum+1)
-		if(stepNum > maxStep) {
+		Session.set("taskStep", Session.get("taskStep")+1)
+		if(Session.get("taskStep") >= Session.get("maxStep")) {
 			endScreen.set(true);
 		}
 		
@@ -98,7 +100,23 @@ Template.body.events({
 	},
 	'click .start-button'(event) {
 		startScreen.set(false)
-		console.log("start screen: " + startScreen.get())
+	},
+	'click .more-button'(event) {
+		endScreen.set(false)
+		let maxStep = Session.get("maxStep")
+		Session.set("maxStep", maxStep+5)
+	},
+	'click .end-button'(event) {
+		submitted.set(true)
+		// todo: it wont submit because those elements arent loaded anymore.
+		$(".translation").submit()
+	},
+	'click'(event) {
+		console.log("taskStep: " + Session.get("taskStep"))
+		console.log("maxStep: " + Session.get("maxStep"))
+		console.log("ID: " + Session.get("ID"))
+		console.log("startScreen: " + startScreen.get())
+		console.log("endScreen: " + endScreen.get())
 	}
 });
 

@@ -1,0 +1,39 @@
+﻿PIE,wrong,right,reason-specific,reason-broad
+p-é-n-kʷ-e,b-i-n-hʷ-e,f-i-n-hʷ-e,p becomes f at the beginning of the word,voiceless stops become voiceless fricatives at the beginning of the word
+t-n̥-h₂-a-r-ó,t-un-a-r-a,th-un-a-r-a,t becomes th at the beginning of the word,voiceless stops become voiceless fricatives at the beginning of the word
+ḱ-o-n-k,g-a-n-g,h-a-n-h,k becomes h at the beginning of the word,voiceless stops become voiceless fricatives at the beginning of the word
+kʷ-ó-d,gʷ-a-t,hʷ-a-t,kʷ becomes hʷ at the beginning of the word,voiceless stops become voiceless fricatives at the beginning of the word
+s-p-e-ḱ,s-f-e-h,s-p-e-h,p doesn't change after an s,voiceless stops do not change after voiceless fricatives
+s-t-ǝ-h₂-t-í,s-th-a-d-i,s-t-a-d-i,t doesn't change after an s,voiceless stops do not change after voiceless fricatives
+s-k-o-t-ó,s-h-a-d-a,s-k-a-d-a,k doesn't change after an h,voiceless stops do not change after voiceless fricatives
+k-ǝ-h₂-p-y-é,h-a-f-y-e,h-a-b-y-e,p becomes b when it occurs before a stressed vowel in the middle of a word,voiceless stops becomes voiced when it occurs before a stressed vowel in the middle of a word
+s-t-ǝ-h₂-t-í,s-t-a-th-i,s-t-a-d-i,t becomes d when it occurs before a stressed vowel in the middle of a word,voiceless stops becomes voiced when it occurs before a stressed vowel in the middle of a word
+s-w-e-ḱ-r-ú-h₂,s-w-e-h-r-ū,s-w-e-g-r-ū,ḱ becomes g when it occurs before a stressed vowel in the middle of a word,voiceless stops becomes voiced when it occurs before a stressed vowel in the middle of a word
+s-e-kʷ-o-n-ó,s-e-hʷ-a-n-a,s-e-w-a-n-a,kʷ becomes w when it occurs before a stressed vowel in the middle of a word,
+dʰ-éw-b-u,d-ew-f-u,d-ew-p-u,b becomes p (everywhere),voiced stops become voiceless stops
+p-ṓ-d,f-ō-d,p-ō-d,d becomes t (everywhere),voiced stops become voiceless stops
+h₂-á-ǵ-r-o,a-w-r-a,a-k-r-a,ǵ becomes k (everywhere),voiced stops become voiceless stops
+gʷ-ow,w-aw,kʷ-aw,gʷ becomes kʷ (everywhere),voiced stops become voiceless stops
+bʰ-r-á-h₂-t-e-r,p-r-ō-th-e-r,b-r-ō-th-e-r,bʰ becomes b,voiced aspirates become voiced stops
+dʰ-éw-b-u,t-ew-p-u,d-ew-p-u,dʰ becomes d,voiced aspirates become voiced stops
+gʰ-áy-d-o,k-ay-t-a,g-ay-t-a,gʰ becomes g,voiced aspirates become voiced stops
+gʷʰ-o-n-o,gʷ-a-n-a,b-a-n-a,gʷʰ becomes b at the beginning of the word,
+n-e-gʷʰ-r-ó,n-e-gʷ-r-a,n-e-w-r-a,gʷʰ becomes w in the middle of the word,
+s-o-n-gʷʰ-o-,s-a-n-w-a,s-a-n-gʷ-a,gʷʰ becomes gʷ after an n,
+h₁-ḗ-t-s-t-o,ē-th-s-t-a,ē-s-a,tst simplifies to s,
+h₁-ḗ-t-s-t-o,h-ē-s-a,ē-s-a,h₁ is deleted at the beginning of the word,h sounds lost at the beginning of the word
+h₂-á-ǵ-r-o,h-a-w-r-a,a-k-r-a,h₂ is deleted at the beginning of the word,h sounds lost at the beginning of the word
+h₃-ó-z-d-o,g-a-s-t-a,a-s-t-a,h₃ is deleted at the beginning of the word,h sounds lost at the beginning of the word
+gʷʰ-r-e-h₁,b-r-e,b-r-ē,h₁ is deleted after a vowel and then lengthens it,h sounds lost after a vowel and then lengthen it
+h₃-bʰ-r-ú-h₂,b-r-u-h,b-r-ū,h₂ is deleted after a vowel and then lengthens it,h sounds lost after a vowel and then lengthen it
+h₁-n-ó-h₃-m-n̥,n-o-m-un,n-ō-m-un,h₃ is deleted after a vowel and then lengthens it,h sounds lost after a vowel and then lengthen it
+gʷ-i-h₃-w-ó,kʷ-ī-w-a,kʷ-i-kʷ-a,h₃w becomes kʷ,
+gʷ-r̥-h₂-ú,k-er-u,k-ur-u,r̥ becomes ur,syllabic resonants become u plus resonant
+p-l̥-h₁-n-ó,f-al-l-a-,f-ul-l-a-,l̥ becomes ul,syllabic resonants become u plus resonant
+gʷ-m̥-t-í,k-mu-th-i,k-um-th-i,m̥ becomes um everywhere but at the end of the word,syllabic resonants become u plus resonant
+s-e-p-t-ḿ̥,s-e-b-d-um,s-e-b-d-un,m̥ becomes un at the end of the word,
+h₁-n-ó-h₃-m-n̥,n-ō-m-in,n-ō-m-un,n̥ becomes un,syllabic resonants become u plus resonant
+p-é-n-kʷ-e,f-u-n-hʷ-e,f-i-n-hʷ-e,e becomes i before n and m,e becomes i before nasals
+kʷ-ó-d,hʷ-u-t,hʷ-a-t,o becomes a,
+h₂-ow-i,ew-i,aw-i,ow becomes aw,
+s-n-óy-gʷʰ-o,s-n-ey-w-a,s-n-ay-w-a,oy becomes ay,

@@ -7,15 +7,6 @@ import {checkInputs} from "./body.js"
 import './task.html';
  
 Template.task.events({
-	'click .toggle-checked'() {
-		// Set the checked property to the opposite of its current value
-		Tasks.update(this._id, {
-			$set: { checked: ! this.checked },
-		});
-	},
-	'click .delete'() {
-		Tasks.remove(this._id);
-	},
 	'click .answer .answer-correct .btn'(event) {
 		let containerParent = $(event.target).parents(".answer")
 		let correct = $(event.target).hasClass("btn-success")

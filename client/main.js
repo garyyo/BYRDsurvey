@@ -5,9 +5,8 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import { ReactiveVar } from 'meteor/reactive-var'
 
 Session.setDefault("taskStep", Number(0))
-Session.setDefault("maxStep", Number(2))
+Session.setDefault("maxStep", Number(5))
 Session.setDefault("ID", makeID(7))
-console.log("ID: " + Session.get("ID"))
 function makeID(length) {
 	let result           = '';
 	let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

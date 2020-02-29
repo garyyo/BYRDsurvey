@@ -1,5 +1,10 @@
 <template name="task">
-    <div class="container answer" id="{{_id._str}}">
+    <div class="container answer" isCorrect="{{isCorrect}}" id="{{_id._str}}">
+<!--        <div class="hidden-info">-->
+<!--            <input type="hidden" class="PIE" value="{{PIE}}"/>-->
+<!--            <input type="hidden" class="G-right" value="{{right}}"/>-->
+<!--            <input type="hidden" class="G-right" value="{{wrong}}"/>-->
+<!--        </div>-->
         <div class="row">
             <div class="col-sm h4 text-center">PIE Separated</div>
             <div class="col-sm h4 text-center">Germanic Separated</div>
@@ -7,13 +12,21 @@
         <div class="row">
             <div class="col-sm text-center selectable">{{PIE}}<input type="hidden" class="PIE-hidden-selected"/></div>
             <div class="col-sm-auto text-center selectable"><i class="fa fa-arrow-right"></i></div>
+            {{#if isCorrect}}
+            <div class="col-sm text-center selectable">{{right}}<input type="hidden" class="Germ-hidden-selected"/></div>
+            {{else}}
             <div class="col-sm text-center selectable">{{wrong}}<input type="hidden" class="Germ-hidden-selected"/></div>
+            {{/if}}
         </div>
         <br>
         <div class="row">
-            <div class="col-sm text-center btn-group answer-correct" data-toggle="button">
-                <div class="btn btn-success">Correct</div>
-                <div class="btn btn-danger">Incorrect</div>
+            <div class="col-sm text-center btn-group btn-group-toggle answer-correct" data-toggle="buttons">
+                <label class="btn btn-success active">
+                    <input type="radio" name="options" autocomplete="off">Correct 
+                </label>
+                <label class="btn btn-danger">
+                    <input type="radio" name="options" autocomplete="off">Incorrect
+                </label>
             </div>
             <input type="hidden" class="change-correct">
         </div>

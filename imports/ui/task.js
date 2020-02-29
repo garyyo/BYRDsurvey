@@ -8,8 +8,9 @@ import './task.html';
  
 Template.task.events({
 	'click .answer .answer-correct .btn'(event) {
+		console.log("moo")
 		let containerParent = $(event.target).parents(".answer")
-		let correct = $(event.target).hasClass("btn-success")
+		let correct = $(event.target).parent().hasClass("btn-success")
 		$(containerParent).find(".change-correct").val(correct)
 		$(containerParent).find(".change-correct").trigger("input")
 		// if it is correct

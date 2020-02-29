@@ -19,6 +19,9 @@ export const updateView = function(){
 	$(".next-button").hide()
 	$(".reasoning").hide()
 }
+export const hideView = function(){
+	$(".answer").hide()
+}
 export const checkInputs = function(parent){
 	let selectedPIE = Boolean($(parent).find(".PIE-hidden-selected").val())
 	let selectedGerm = Boolean($(parent).find(".Germ-hidden-selected").val())
@@ -31,13 +34,30 @@ export const checkInputs = function(parent){
 
 Template.body.helpers({
 	tasks() {
-		let data = SeededShuffle.shuffle(Translations.find({}).fetch(), Session.get("ID"))
+		let translations = Translations.find({}).fetch()
+		for (i in translations) {
+			// console.log(i, translations[i])
+			let t = translations[i]
+			if (Math.random() < .5) {
+				t.isCorrect = true;
+			}else{
+				t.isCorrect = false;
+			}
+		}
+		
+		let data = SeededShuffle.shuffle(translations, Session.get("ID"))
+		// console.log(data)
 		return data
 	},
 	startScreen() {
 		return startScreen.get()
 	},
 	endScreen() {
+		if (endScreen.get()){
+			hideView()
+		} else {
+			updateView()
+		}
 		return endScreen.get()
 	},
 	submitted() {
@@ -59,8 +79,9 @@ Template.task.onRendered(function (){
 Template.body.events({
 	'submit .translation'(event) {
 		console.log("its fine, im here")
-		let translation_keys = Translations.find({}).fetch().map(function(currentValue){return currentValue._id._str})
-		console.log(translation_keys)
+		let translations = Translations.find({}).fetch()
+		let translation_keys = translations.map(function(currentValue){return currentValue._id._str})
+		// console.log(translation_keys)
 		// Prevent default browser form submit
 		event.preventDefault();
 	 
@@ -71,26 +92,43 @@ Template.body.events({
 		for(let i in translation_keys){
 			let key = translation_keys[i]
 			let table = $(target).find("#"+key)
+			if (table.attr("complete") !== "true") {
+				continue;
+			}
 			
 			let selectedTextPIE = table.find(".PIE-hidden-selected").val()
 			let selectedTextGermanic = table.find(".Germ-hidden-selected").val()
-			let translation_correct = table.find(".checkbox").is(":checked")
+			let selected_correct = table.find(".change-correct").val() === "true"
+			let actually_correct = table.attr("isCorrect")
+			if(actually_correct === undefined) {
+				actually_correct = false
+			}else{
+				actually_correct = true
+			}
 			let reasoning = table.find(".reasoning").val();
 			
+			// console.log(translations[i])
+
 			answers[key] = {
 				id: Session.get("ID"),
 				selectedTextPIE,
 				selectedTextGermanic,
-				translation_correct,
-				reasoning
+				selected_correct,
+				actually_correct,
+				reasoning,
+				PIE: translations[i].PIE,
+				wrong: translations[i].wrong,
+				right: translations[i].right,
+				
 			}
 			
 		}
-		
+		console.log(answers)
 		// Insert a task into the collection
-		// Tasks.insert(answers);
+		Tasks.insert(answers);
 	},
 	'click .next-button'(event) {
+		$($(".answer:nth-child(" + (Session.get("taskStep")+1) +")")[0]).attr("complete", "true")
 		Session.set("taskStep", Session.get("taskStep")+1)
 		if(Session.get("taskStep") >= Session.get("maxStep")) {
 			endScreen.set(true);
@@ -104,19 +142,18 @@ Template.body.events({
 	'click .more-button'(event) {
 		endScreen.set(false)
 		let maxStep = Session.get("maxStep")
-		Session.set("maxStep", maxStep+5)
+		Session.set("maxStep", maxStep+Session.get("additionalSteps"))
 	},
 	'click .end-button'(event) {
 		submitted.set(true)
-		// todo: it wont submit because those elements arent loaded anymore.
 		$(".translation").submit()
 	},
 	'click'(event) {
-		console.log("taskStep: " + Session.get("taskStep"))
-		console.log("maxStep: " + Session.get("maxStep"))
-		console.log("ID: " + Session.get("ID"))
-		console.log("startScreen: " + startScreen.get())
-		console.log("endScreen: " + endScreen.get())
+		// console.log("taskStep: " + Session.get("taskStep"))
+		// console.log("maxStep: " + Session.get("maxStep"))
+		// console.log("ID: " + Session.get("ID"))
+		// console.log("startScreen: " + startScreen.get())
+		// console.log("endScreen: " + endScreen.get())
 	}
 });
 

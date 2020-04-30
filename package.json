@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "bootstrap": "^4.4.1",
     "datatables.net-bs": "^1.10.20",
-    "jquery": "^1.11.2",
+    "jquery": "^3.5.0",
     "meteor-node-stubs": "^1.0.0",
     "popper.js": "^1.16.0",
     "seededshuffle": "^0.2.0"

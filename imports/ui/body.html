@@ -221,7 +221,8 @@
         </div>
     {{/if}}
 
-    {{#if screen "task"}}
+
+        <div class="{{#unless screen "task"}} hidden {{/unless}} a">
             <header>
                 <h2 class="text-center">
                     Explainability Task
@@ -242,7 +243,8 @@
                 </div>
                 <!--			<input class="btn btn-primary" type="submit">-->
             </form>
-        {{/if}}
+        </div>
+
 
     {{#if screen "end"}}
         <header>

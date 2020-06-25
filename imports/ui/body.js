@@ -42,11 +42,12 @@ Template.body.helpers({
 			// console.log(i, translations[i])
 			let t = translations[i]
 
-			if (Math.random() < .3) {
-				t.isCorrect = true;
-			}else{
-				t.isCorrect = false;
-			}
+			// if (Math.random() < .3) {
+			// 	t.isCorrect = true;
+			// }else{
+			// 	t.isCorrect = false;
+			// }
+			t.isCorrect = false;
 		}
 		
 		let data = SeededShuffle.shuffle(translations, Session.get("ID"))

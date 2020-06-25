@@ -11,6 +11,9 @@ import './body.html';
 let startScreen = new ReactiveVar(true)
 let endScreen = new ReactiveVar(false)
 let submitted = new ReactiveVar(false)
+let ranOut = new ReactiveVar(false)
+
+let startTextList = ["start1", "start2", "start3", "start4", "start5", "task"]
 
 export const updateView = function(){
 	$(".answer").hide()
@@ -38,7 +41,8 @@ Template.body.helpers({
 		for (i in translations) {
 			// console.log(i, translations[i])
 			let t = translations[i]
-			if (Math.random() < .5) {
+
+			if (Math.random() < .3) {
 				t.isCorrect = true;
 			}else{
 				t.isCorrect = false;
@@ -49,7 +53,12 @@ Template.body.helpers({
 		// console.log(data)
 		return data
 	},
-	startScreen() {
+	screen(page) {
+		console.log(Session.get("currentPage"), page)
+		return Session.get("currentPage") === page
+	},
+	startScreen(number) {
+		console.log(number, "number")
 		return startScreen.get()
 	},
 	endScreen() {
@@ -62,11 +71,18 @@ Template.body.helpers({
 	},
 	submitted() {
 		return submitted.get()
+	},
+	ranOut() {
+		return ranOut.get()
 	}
 });
 
 Template.task.onRendered(function (){
 	this.$('.selectable').mouseup(CurrentSelection.Selector.mouseup);
+	this.$('.clear-selections').click(function (e) {
+		$(this).parent().find('.selectable').unhighlight()
+	})
+	this.$('.selectable').on("touchend", CurrentSelection.Selector.mouseup);
 	this.$("input").keydown(function(event){
 		if(event.keyCode === 13) {
 			event.preventDefault();
@@ -78,19 +94,19 @@ Template.task.onRendered(function (){
 
 Template.body.events({
 	'submit .translation'(event) {
-		console.log("its fine, im here")
 		let translations = Translations.find({}).fetch()
-		let translation_keys = translations.map(function(currentValue){return currentValue._id._str})
-		// console.log(translation_keys)
+		// let translation_keys = translations.map(function(currentValue){return currentValue._id})
+
 		// Prevent default browser form submit
 		event.preventDefault();
-	 
+
 		// Get value from form element
 		const target = event.target;
 
 		let answers = {}
-		for(let i in translation_keys){
-			let key = translation_keys[i]
+		for(let i in translations){
+			let key = translations[i]._id
+			console.log(key)
 			let table = $(target).find("#"+key)
 			if (table.attr("complete") !== "true") {
 				continue;
@@ -100,14 +116,9 @@ Template.body.events({
 			let selectedTextGermanic = table.find(".Germ-hidden-selected").val()
 			let selected_correct = table.find(".change-correct").val() === "true"
 			let actually_correct = table.attr("isCorrect")
-			if(actually_correct === undefined) {
-				actually_correct = false
-			}else{
-				actually_correct = true
-			}
-			let reasoning = table.find(".reasoning").val();
-			
-			// console.log(translations[i])
+			actually_correct = actually_correct !== undefined;
+
+			let reasoning = table.find(".reasoning-form").val();
 
 			answers[key] = {
 				id: Session.get("ID"),
@@ -119,25 +130,27 @@ Template.body.events({
 				PIE: translations[i].PIE,
 				wrong: translations[i].wrong,
 				right: translations[i].right,
-				
 			}
-			
 		}
 		console.log(answers)
+
 		// Insert a task into the collection
 		Tasks.insert(answers);
 	},
 	'click .next-button'(event) {
+		console.log(Session.get("taskStep"),Session.get("maxStep"))
 		$($(".answer:nth-child(" + (Session.get("taskStep")+1) +")")[0]).attr("complete", "true")
 		Session.set("taskStep", Session.get("taskStep")+1)
-		if(Session.get("taskStep") >= Session.get("maxStep")) {
-			endScreen.set(true);
+		if(Session.get("taskStep") >= Session.get("maxStep") || Session.get("taskStep") >= Translations.find({}).fetch().length) {
+			Session.set("currentPage", "end")
 		}
+		ranOut.set(Session.get("taskStep") >= Translations.find({}).fetch().length)
 		
 		updateView()
 	},
 	'click .start-button'(event) {
-		startScreen.set(false)
+		// get next page as defined in startTextList
+		Session.set("currentPage", startTextList[startTextList.indexOf(Session.get("currentPage")) + 1])
 	},
 	'click .more-button'(event) {
 		endScreen.set(false)
@@ -180,6 +193,9 @@ CurrentSelection.Selector.getSelected = function(){
 // function to be called on mouseup
 CurrentSelection.Selector.mouseup = function(event){
 	let selectedText = CurrentSelection.Selector.getSelected().toString()
+	if(selectedText === ""){
+		return;
+	}
 	let containerParent = $(event.target).parents(".answer")
 	$(this).unhighlight()
 	$(this).highlight(selectedText)

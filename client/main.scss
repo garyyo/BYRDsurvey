@@ -90,11 +90,11 @@ form {
   outline: 0;
 }
  
-ul {
-  margin: 0;
-  padding: 0;
-  background: white;
-}
+//ul {
+//  margin: 0;
+//  padding: 0;
+//  background: white;
+//}
  
 .delete {
   float: right;
@@ -105,29 +105,29 @@ ul {
   position: relative;
 }
  
-li {
-  position: relative;
-  list-style: none;
-  padding: 15px;
-  border-bottom: #eee solid 1px;
-}
- 
-li .text {
-  margin-left: 10px;
-}
- 
-li.checked {
-  color: #888;
-}
- 
-li.checked .text {
-  text-decoration: line-through;
-}
- 
-li.private {
-  background: #eee;
-  border-color: #ddd;
-}
+//li {
+//  position: relative;
+//  list-style: none;
+//  padding: 15px;
+//  border-bottom: #eee solid 1px;
+//}
+//
+//li .text {
+//  margin-left: 10px;
+//}
+//
+//li.checked {
+//  color: #888;
+//}
+//
+//li.checked .text {
+//  text-decoration: line-through;
+//}
+//
+//li.private {
+//  background: #eee;
+//  border-color: #ddd;
+//}
  
 header .hide-completed {
   float: right;

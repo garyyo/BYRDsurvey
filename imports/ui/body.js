@@ -28,11 +28,17 @@ export const hideView = function(){
 export const checkInputs = function(parent){
 	let selectedPIE = Boolean($(parent).find(".PIE-hidden-selected").val())
 	let selectedGerm = Boolean($(parent).find(".Germ-hidden-selected").val())
-	let selectedCorrect = Boolean($(parent).find(".change-correct").val())
+	// let selectedCorrect = Boolean($(parent).find(".change-correct").val())
+	let selectedCorrect = true
 	let correctVal = $(parent).find(".change-correct").val() === "true"
 	let typedReasoning = Boolean($(parent).find(".reasoning-form").val())
 
 	return (selectedCorrect && correctVal) || (!correctVal && selectedPIE && selectedGerm && selectedCorrect && typedReasoning)
+}
+export const checkSelected = function(parent){
+	let selectedPIE = Boolean($(parent).find(".PIE-hidden-selected").val())
+	let selectedGerm = Boolean($(parent).find(".Germ-hidden-selected").val())
+	return selectedPIE && selectedGerm
 }
 
 Template.body.helpers({
@@ -42,12 +48,12 @@ Template.body.helpers({
 			// console.log(i, translations[i])
 			let t = translations[i]
 
-			if (Math.random() < .3) {
-				t.isCorrect = true;
-			}else{
-				t.isCorrect = false;
-			}
-			// t.isCorrect = false;
+			// if (Math.random() < .3) {
+			// 	t.isCorrect = true;
+			// }else{
+			// 	t.isCorrect = false;
+			// }
+			t.isCorrect = false;
 		}
 		
 		let data = SeededShuffle.shuffle(translations, Session.get("ID"))
@@ -115,7 +121,8 @@ Template.body.events({
 			
 			let selectedTextPIE = table.find(".PIE-hidden-selected").val()
 			let selectedTextGermanic = table.find(".Germ-hidden-selected").val()
-			let selected_correct = table.find(".change-correct").val() === "true"
+			// let selected_correct = table.find(".change-correct").val() === "true"
+			let selected_correct = false
 			let actually_correct = table.attr("isCorrect")
 			actually_correct = actually_correct !== undefined;
 

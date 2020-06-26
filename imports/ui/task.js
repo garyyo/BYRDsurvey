@@ -5,12 +5,13 @@ import {checkInputs} from "./body.js"
 './body.js'
  
 import './task.html';
+import {checkSelected} from "./body";
  
 Template.task.events({
 	'click .answer .answer-correct .btn'(event) {
-		console.log("moo")
 		let containerParent = $(event.target).parents(".answer")
-		let correct = $(event.target).parent().hasClass("btn-success")
+		// let correct = $(event.target).parent().hasClass("btn-success")
+		let correct = false
 		$(containerParent).find(".change-correct").val(correct)
 		$(containerParent).find(".change-correct").trigger("input")
 		// if it is correct
@@ -30,12 +31,25 @@ Template.task.events({
 		}
 
 	},
-	'input .answer input'(event) {
-		let containerParent = $(event.target).parents(".answer")
-		if(checkInputs(containerParent)){
-			$(".next-button").show()
-		}else{
-			$(".next-button").hide()
-		}
-	}
+	'input .answer input':checkNextButton,
+	'click':checkNextButton,
 });
+
+function checkNextButton(event) {
+	let containerParent = $(event.target).parents(".answer")
+	if(!containerParent[0]){
+		return
+	}
+	let inputs = checkInputs(containerParent)
+	console.log(inputs)
+	if(inputs){
+		$(".next-button").show()
+	}else{
+		$(".next-button").hide()
+	}
+	if(checkSelected(containerParent)){
+		$(".reasoning").show()
+	}else{
+		$(".reasoning").hide()
+	}
+}

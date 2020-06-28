@@ -13,7 +13,7 @@ let endScreen = new ReactiveVar(false)
 let submitted = new ReactiveVar(false)
 let ranOut = new ReactiveVar(false)
 
-let startTextList = ["start1", "start2", "start3", "start4", "start5", "task"]
+let startTextList = ["start1", "start2", "start3", "start4", "start5", "start6", "task"]
 
 export const updateView = function(){
 	$(".answer").hide()
@@ -149,7 +149,10 @@ Template.body.events({
 		console.log(Session.get("taskStep"),Session.get("maxStep"))
 		$($(".answer:nth-child(" + (Session.get("taskStep")+1) +")")[0]).attr("complete", "true")
 		Session.set("taskStep", Session.get("taskStep")+1)
-		if(Session.get("taskStep") >= Session.get("maxStep") || Session.get("taskStep") >= Translations.find({}).fetch().length) {
+
+		// if(Session.get("taskStep") >= Session.get("maxStep") || Session.get("taskStep") >= Translations.find({}).fetch().length) {
+		// make them do all of them
+		if(Session.get("taskStep") >= Translations.find({}).fetch().length) {
 			Session.set("currentPage", "end")
 		}
 		ranOut.set(Session.get("taskStep") >= Translations.find({}).fetch().length)

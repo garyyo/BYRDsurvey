@@ -33,6 +33,10 @@ Template.task.events({
 	},
 	'input .answer input':checkNextButton,
 	'click':checkNextButton,
+	'click .cheat-btn'(){
+		let containerParent = $(".answer:visible")
+		containerParent.find(".hint-box").toggle()
+	}
 });
 
 function checkNextButton(event) {

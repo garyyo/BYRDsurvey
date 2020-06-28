@@ -14,17 +14,6 @@
             {{/if}}
         </div>
         <br>
-<!--        <div class="row">-->
-<!--            <div class="col-sm text-center btn-group btn-group-toggle answer-correct" data-toggle="buttons">-->
-<!--                <label class="btn btn-success active">-->
-<!--                    <input type="radio" name="options" autocomplete="off">Correct -->
-<!--                </label>-->
-<!--                <label class="btn btn-danger">-->
-<!--                    <input type="radio" name="options" autocomplete="off">Incorrect-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <input type="hidden" class="change-correct">-->
-<!--        </div>-->
         <br>
         <div class="row">
             <div class="col-sm text-center">
@@ -34,6 +23,22 @@
         <div class="row reasoning">
             <div class="col-sm text-center">
                 <input type="text" class="reasoning-form form-control text-center" placeholder="Type your reasoning here">
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col text-center">
+                <button class="btn cheat-btn btn-dark">Toggle Hint</button>
+            </div>
+        </div>
+        <div class="hint-box mt-2 p-2 rounded bg-info" style="display: none">
+            <div class="row">
+                <div class="col-sm h4 text-center">PIE</div>
+                <div class="col-sm h4 text-center">Corrected Germanic</div>
+            </div>
+            <div class="row">
+                <div class="col-sm text-center">{{PIE}}<input type="hidden" class="PIE-hidden-selected"/></div>
+                <div class="col-sm-auto text-center"><i class="fa fa-arrow-right"></i></div>
+                <div class="col-sm text-center">{{right}}<input type="hidden" class="Germ-hidden-selected"/></div>
             </div>
         </div>
     </div>
